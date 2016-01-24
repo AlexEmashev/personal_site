@@ -1,26 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Alexander Emashev</title>
 </head>
+
 <body>
-  <header>
-   <h1>Site title under construction, sorry</h1>
-    <nav>Navigation menu</nav>
-  </header>
-  
-  <section>
-   
-    <article>
-      <header>
-        Work in progress
-      </header>
-      <section>Site is under construction, sorry. There is not much to see here currently.</section>
-    </article>
+  <div class="main">
+
+    <header class="site-header">
+      <h1 class="site-logo"><span>A</span>lex<span>E</span>mashev.com</h1>
+      <figure class="social">
+      </figure>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#" class="selected">Main</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Apps</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="slider">
+      <div class="slider-background"></div>
+      <img src="images/slider_preview.png" alt="">
+    </section>
     
-  </section>
+
+    <section class="site-content">
+      <h2 class="content-header">Latest news</h2>
+      <div class="content">
+       
+        <article class="news-block">
+          <div class="news-content">
+          <header>
+            <h1>Girl after shower</h1>
+          </header>
+            <div class="news-text">
+              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
+            </div>
+              <a class="preview-img" href="images/news-item-preview.png">Picture</a>
+          </div>
+        </article>
+        
+        <article class="news-block">
+          <div class="news-content">
+          <header>
+            <h1>Girl after shower tons of texts in header and body</h1>
+          </header>
+            <div class="news-text">
+              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
+              <p>Even more text</p>
+            </div>
+            
+            <a class="preview-img" href="images/news-item-preview.png">Picture</a>
+          </div>
+        </article>
+
+        <article class="news-block">
+         <div class="news-content">
+          <header>
+            <h1>Text news</h1>
+          </header>
+          <div class="news-description">
+            <p>Just a text block. Without any picture.</p>
+            <p>But with two paragraphs. When there is no picture this block have to stretch and take up all available space.</p>
+          </div>
+          </div>
+          
+        </article>
+        
+        <article class="news-block">
+          <div class="news-content">
+          <header>
+            <h1>Girl after shower tons of texts in header and body</h1>
+          </header>
+            <div class="news-text">
+              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
+              <p>Even more text</p>
+            </div>
+            
+            <a class="preview-img" style="background-image:url(images/slider_preview.png)" href="images/slider_preview.png">
+            </a>
+          </div>
+        </article>
+        
+        
+        
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>Design by Alexander Emashev 2016</span>
+    </footer>
+  </div>
 </body>
+
 </html>

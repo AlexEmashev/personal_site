@@ -10,7 +10,7 @@ Below there are couple of concepts of possible look of final project.
 
 ![BrightSide](templates/template_bright_side.png)
 
-###Dark theme:
+###Dark theme
 
 ![DarkSide](templates/template_dark_side.png)
 
