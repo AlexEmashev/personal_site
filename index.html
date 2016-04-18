@@ -5,7 +5,15 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/swipeslider.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/swipeslider.js"></script>
+  <script>
+    $(window).load(function() {
+      //$('#imageSlider').swipeslider({autoPlayTimeout: 5000});
+    });
+  </script>
   <title>Alexander Emashev</title>
 </head>
 
@@ -34,9 +42,21 @@
       </nav>
     </header>
 
-    <figure class="slider">
-      <div class="slider-background"></div>
-<!--      <img src="images/slider_preview.png" alt="">-->
+    <figure class="swipslider" id="imageSlider">
+        <ul class="slides">
+          <li class="slide">
+            <img src="images/lang_yie_ar_kung_fu.jpg" alt="Lang from Yie Ar Kung Fu">
+          </li>
+          <li class="slide">
+            <img src="images/summer_beach.jpg" alt="Summer beach concept">
+          </li>
+          <li class="slide">
+            <img src="images/borderlands_tiny_tina.jpg" alt="Tiny Tina from Borderlands 2">
+          </li>
+          <li class="slide">
+            <img src="images/redhead.jpg" alt="Redhead girl">
+          </li>
+        </ul>
     </figure>
 
 
@@ -72,7 +92,7 @@
     </section>
 
     <footer class="site-footer">
-      <span>Design by Alexander Emashev 2016</span>
+      <span>Designed by Alexander Emashev 2016</span>
     </footer>
   </div>
 </body>
