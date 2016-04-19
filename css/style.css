@@ -31,87 +31,97 @@ body {
 
 /* line 31, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 header.site-header {
+  height: 60px;
+  padding: 0 10px;
   position: relative;
   overflow: visible;
   box-shadow: 0 10px black; }
-  /* line 34, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 36, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   header.site-header::after {
     content: '';
     display: table;
     clear: both; }
 
-/* line 41, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 43, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 figure.social {
   float: right;
-  margin: 10px 0 0 0;
+  height: 100%;
+  margin: 0 0 0 0;
   padding: 0;
-  display: block; }
-  /* line 46, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  display: table; }
+  /* line 49, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   figure.social ul {
-    margin: 0;
+    margin: auto 0;
     padding: 0;
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
     list-style: none;
     width: 100px;
-    word-spacing: 4px; }
-    /* line 53, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+    word-spacing: 5px; }
+    /* line 57, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
     figure.social ul li {
-      width: 20px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       display: inline-block; }
-      /* line 57, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 61, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       figure.social ul li a {
         text-decoration: none; }
-        /* line 59, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 63, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a::before {
           color: #989898;
-          font-size: 1.5rem;
-          line-height: 1.5rem; }
-        /* line 65, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+          font-size: 23px;
+          line-height: 25px; }
+        /* line 69, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-deviantart:hover::before {
           color: #308330; }
-        /* line 68, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 72, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-github:hover::before {
           color: #3b6d9f; }
-        /* line 71, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 75, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-instagram:hover::before {
           color: #4152af; }
-        /* line 74, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 78, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-twitter:hover::before {
           color: #1e88af; }
-        /* line 77, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 81, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-facebook-square:hover::before {
           color: #4b23a2; }
-        /* line 80, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 84, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a.fa-vk:hover::before {
           color: #2e4da0; }
-        /* line 83, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 87, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         figure.social ul li a .hidden-text {
           line-height: 0;
           font-size: 0;
           color: transparent; }
 
-/* line 92, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 96, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 h1.site-logo {
   margin: 0;
   float: left;
-  padding-top: 5px;
-  padding-left: 10px;
+  height: 100%;
+  display: table;
+  text-align: center;
+  vertical-align: middle;
   font-size: 22px;
   font-family: "Arial Narrow";
   font-weight: lighter;
   color: #afafaf;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); }
-  /* line 103, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
-  h1.site-logo span {
+  /* line 108, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  h1.site-logo .logo-text {
+    display: table-cell;
+    vertical-align: middle; }
+  /* line 112, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  h1.site-logo .logo-text-highlight {
     color: #6fdef1; }
 
-/* line 107, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 117, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 nav.site-nav {
   display: block;
-  height: 60px;
+  height: 100%;
   text-align: center; }
-  /* line 111, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 121, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   nav.site-nav ul {
     display: inline-block;
     position: relative;
@@ -120,40 +130,40 @@ nav.site-nav {
     list-style: none;
     text-align: center;
     vertical-align: bottom; }
-    /* line 119, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+    /* line 129, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
     nav.site-nav ul li {
       display: inline-block; }
-      /* line 121, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 131, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li:not(first-child) {
         margin-right: 20px; }
-      /* line 124, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 134, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li a:link {
         font-size: 22px;
         color: #535353;
         text-transform: uppercase;
         font-family: "Arial Narrow";
         text-decoration: none; }
-      /* line 131, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 141, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li a:visited {
         color: #535353; }
-      /* line 134, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 144, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li a:hover {
         color: #6fdef1;
         text-decoration: underline; }
-      /* line 138, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 148, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li a:active {
         color: #9de8f6; }
-      /* line 141, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+      /* line 151, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
       nav.site-nav ul li a.selected {
         color: #16c5e4; }
-        /* line 143, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 153, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         nav.site-nav ul li a.selected:hover {
           color: #6fdef1; }
-        /* line 146, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+        /* line 156, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
         nav.site-nav ul li a.selected:active {
           color: #9de8f6; }
 
-/* line 154, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 164, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 #imageSlider {
   margin: 0;
   padding: 0;
@@ -162,12 +172,12 @@ nav.site-nav {
   background: #464646;
   background: linear-gradient(#373737, #464646 5%, #464646 95%, #373737); }
 
-/* line 163, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 173, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 section.site-content {
+  padding: 0 15px 15px 15px;
   text-align: center;
-  flex: 2 0 auto;
   background-color: #ebebeb; }
-  /* line 167, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 177, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   section.site-content h2 {
     text-align: center;
     text-transform: uppercase;
@@ -175,33 +185,28 @@ section.site-content {
     font-family: "Arial Narrow";
     font-weight: lighter;
     margin-top: 20px;
-    margin-bottom: 25px; }
+    margin-bottom: 15px; }
 
-/* line 177, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
-.content {
-  margin: 0 18px;
-  font-size: 0;
-  text-align: left; }
-
-/* line 182, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 188, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 footer.site-footer {
-  flex: 0 0 auto;
+  padding: 10px 0 5px 0;
   text-align: center;
   font-size: smaller;
-  color: #464646;
-  background-color: #ebebeb; }
+  color: #464646; }
 
-/* line 192, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+/* line 196, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
 article.news-block {
   display: block;
   position: relative;
-  max-width: 560px;
-  margin: 25px auto;
+  margin-bottom: 15px;
   padding: 10px;
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 0 0 1px 0.05px rgba(0, 0, 0, 0.29); }
-  /* line 203, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 204, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  article.news-block:last-child {
+    margin-bottom: 0; }
+  /* line 209, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   article.news-block .news-header .news-date {
     display: block;
     text-align: right;
@@ -209,23 +214,23 @@ article.news-block {
     font-weight: bold;
     text-transform: uppercase;
     color: #a8e1eb; }
-  /* line 211, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 217, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   article.news-block .news-header h3 {
     color: #989898;
     text-transform: uppercase;
     font-weight: lighter;
     position: relative;
     top: -5px; }
-  /* line 220, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+  /* line 226, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
   article.news-block .news-content {
     text-align: left;
     padding: 0 5px;
     color: #989898; }
-    /* line 224, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+    /* line 230, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
     article.news-block .news-content p {
       margin-top: 1px;
       margin-bottom: 5px; }
-    /* line 228, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
+    /* line 234, D:/yadisk/YandexDisk/web-dev/alexemashev.com/personal_website/css/style.scss */
     article.news-block .news-content .preview-img {
       display: block;
       margin-top: 10px;

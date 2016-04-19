@@ -29,6 +29,8 @@ body {
   //box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.47);
 }
 header.site-header {
+  height: 60px;
+  padding: 0 10px;
   position: relative;
   overflow: visible;
   &::after {
@@ -40,26 +42,28 @@ header.site-header {
 }
 figure.social{
   float: right;
-  margin: 10px 0 0 0;
+  height: 100%;
+  margin: 0 0 0 0;
   padding: 0;
-  display: block;
+  display: table;
   ul {
-    margin: 0;
+    margin: auto 0;
     padding: 0;
-    display: block;
+    display: table-cell;
+    vertical-align: middle;
     list-style: none;
     width: 100px;
-    word-spacing: 4px;
+    word-spacing: 5px;
     li {
-      width: 20px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       display: inline-block;
       a {
         text-decoration: none;
         &::before {
           color: $text-color-light;
-          font-size: 1.5rem;
-          line-height: 1.5rem;
+          font-size: 23px;
+          line-height: 25px;
         }
         
         &.fa-deviantart:hover::before {
@@ -92,21 +96,27 @@ figure.social{
 h1.site-logo {
   margin: 0;
   float: left;
-  padding-top: 5px;
-  padding-left: 10px;
-  
+  height: 100%;
+  display: table;
+  text-align: center;
+  vertical-align: middle;  
   font-size: 22px;
   font-family: $iface-font-family;
   font-weight: lighter;
   color: #afafaf;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  span {
+  .logo-text {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .logo-text-highlight {
+
     color: $highlight-color;
   }
 }
 nav.site-nav {
   display: block;
-  height: 60px;
+  height: 100%;
   text-align: center;
   ul {
     display: inline-block;
@@ -161,8 +171,8 @@ nav.site-nav {
 }
 
 section.site-content {
+  padding: 0 15px 15px 15px;
   text-align: center;
-  flex: 2 0 auto;
   background-color: $bg-color;
   h2 {
     text-align: center;
@@ -171,33 +181,29 @@ section.site-content {
     font-family: $iface-font-family;
     font-weight: lighter;
     margin-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 }
-.content {
-  margin: 0 18px;
-  font-size: 0;
-  text-align: left;
-}
+
 footer.site-footer {
-  flex: 0 0 auto;
+  padding: 10px 0 5px 0;
   text-align: center;
   font-size: smaller;
   color: $bg-dark;
-  background-color: $bg-color;
 }
-
 
 // News block
 article.news-block {
   display: block;
   position: relative;
-  max-width: 560px;
-  margin: 25px auto;
+  margin-bottom: 15px;
   padding: 10px;
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 0 0 1px .05px rgba(0, 0, 0, 0.29);
+  &:last-child {
+    margin-bottom: 0;
+  }
   
   .news-header {
     .news-date {
