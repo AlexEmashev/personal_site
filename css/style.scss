@@ -21,17 +21,16 @@ body {
 }
 .main {
   height: 100%;
-  width: 740px;
-  background: $bg-color;
-  margin: 0 auto;
-  position: relative;
-  //box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.47);
+  margin: 0;
 }
 header.site-header {
+  min-width: 660px;
   height: 60px;
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
   overflow: visible;
+  background: $bg-color;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.26);
   &::after {
     content: '';
     display: table;
@@ -62,24 +61,10 @@ figure.social {
           color: $text-color-light;
           font-size: 23px;
           line-height: 25px;
+          @include text-highlight-enable;
         }
-        &.fa-deviantart:hover::before {
-          color: #308330;
-        }
-        &.fa-github:hover::before {
-          color: #3b6d9f;
-        }
-        &.fa-instagram:hover::before {
-          color: #4152af;
-        }
-        &.fa-twitter:hover::before {
-          color: #1e88af;
-        }
-        &.fa-facebook-square:hover::before {
-          color: #4b23a2;
-        }
-        &.fa-vk:hover::before {
-          color: #2e4da0;
+        &:hover::before {
+          @include text-highlight;
         }
         .hidden-text {
           line-height: 0;
@@ -105,6 +90,14 @@ h1.site-logo {
   .logo-text {
     display: table-cell;
     vertical-align: middle;
+    text-decoration: none;
+    @include text-highlight-enable;
+    &:link, &:visited {
+      color: #818181;
+    }
+    &:hover{
+      @include text-highlight;
+    }
   }
   .logo-text-highlight {
     color: $highlight-color;
@@ -133,12 +126,13 @@ nav.site-nav {
         text-transform: uppercase;
         font-family: $iface-font-family;
         text-decoration: none;
+        @include text-highlight-enable;
       }
       a:visited {
         color: $text-color;
       }
       a:hover {
-        color: $highlight-color;
+        @include text-highlight;
         text-decoration: underline;
       }
       a:active {
@@ -157,25 +151,35 @@ nav.site-nav {
   }
 }
 #imageSlider {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  height: 240px;
+  height: 300px;
   position: relative;
-  background: $bg-dark;
-  background: linear-gradient(darken($bg-dark, 6%), $bg-dark 5%, $bg-dark 95%, darken($bg-dark, 6%));
+  @include site-block($border: 1px 0 0px);
+  h2 {
+    color: $text-color-light;
+    margin: 0;
+    padding: 3px;
+  }
+  .slides {
+    .slide {
+      background: $bg-color;
+      background: linear-gradient(darken($bg-dark, 6%), $bg-dark 5%, $bg-dark 95%, darken($bg-dark, 6%));      
+    }
+  }
 }
 section.site-content {
-  padding: 0 15px 15px 15px;
   text-align: center;
-  background-color: $bg-color;
+  max-width: $site-block-width-big;
+  margin: 15px auto;
   overflow: hidden;
   h2 {
     text-align: center;
     text-transform: uppercase;
-    color: $inactive-color;
+    color: $text-color;
     font-family: $iface-font-family;
     font-weight: lighter;
-    padding-top: 15px;
+    padding-top: 18px;
     padding-bottom: 10px;
   }
 }
@@ -190,11 +194,9 @@ footer.site-footer {
 article.news-block {
   display: block;
   position: relative;
+  margin: 0 auto;
   margin-bottom: 15px;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 0 1px .05px rgba(0, 0, 0, 0.29);
+  @include site-block;
   &:last-child {
     margin-bottom: 0;
   }
@@ -236,9 +238,7 @@ article.news-block {
   // 320 x 240
   .gallery-img {
     display: block;
-    background-color: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 0 1px .05px rgba(0, 0, 0, 0.29);
+    @include site-block($border: 3px);
     width: 226px;
     height: 211px;
     margin: 5px;
