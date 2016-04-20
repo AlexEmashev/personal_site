@@ -19,6 +19,28 @@ body {
 body {
   background: #9d9d9d;
 }
+
+a:link {
+  color: #4a79a2;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+a:active{
+  color: #58bcd9;
+}
+
+a:visited{
+  color: #45618e;
+}
+
+.doc-section{
+  display: list-item;
+}
+
 .main {
   height: 100%;
   margin: 0;
