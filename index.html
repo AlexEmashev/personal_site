@@ -4,98 +4,103 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/swipeslider.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>Alexander Emashev</title>
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/swipeslider.js"></script>
+  <script>
+    $(window).load(function() {
+      $('#imageSlider').swipeslider({autoPlayTimeout: 5000});
+    });
+  </script>
+  <title>Alexander Emashev Secret Laboratory</title>
 </head>
 
 <body>
   <div class="main">
 
     <header class="site-header">
-      <h1 class="site-logo"><span>A</span>lex<span>E</span>mashev.com</h1>
+      <h1 class="site-logo">
+        <a class="logo-text" href="http://www.alexemashev.com/">
+          <span class="logo-text-highlight">A</span>lex<span class="logo-text-highlight">E</span>mashev.com
+        </a>
+      </h1>
       <figure class="social">
+        <ul>
+          <li><a class="fa fa-deviantart fa-lg" href="http://cgrey.deviantart.com/gallery/" title="Deviantart"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-github fa-lg" href="https://github.com/AlexEmashev" title="Github"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-instagram fa-lg" href="https://www.instagram.com/constantinegrey/" title="Instagram"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-twitter fa-lg" href="https://twitter.com/2DLife" title="Twitter"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-facebook-square fa-lg" href="https://www.facebook.com/alexander.emashev" title="Facebook"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-vk fa-lg" href="http://vk.com/constantine_grey"><span class="hidden-text">Deviantart</span></a></li>
+        </ul>
       </figure>
       <nav class="site-nav">
         <ul>
-          <li><a href="#" class="selected">Main</a></li>
-          <li><a href="#">Gallery</a></li>
+          <li><a href="index.html" class="selected">Main</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="#">Apps</a></li>
           <li><a href="#">About</a></li>
         </ul>
       </nav>
     </header>
-
-    <section class="slider">
-      <div class="slider-background"></div>
-      <img src="images/slider_preview.png" alt="">
-    </section>
     
-
     <section class="site-content">
+         <figure class="swipslider" id="imageSlider">
+        <h2>Highlights</h2>
+      <ul class="slides">
+        <li class="slide">
+          <img src="gallery/0_tiny_vacation.jpg" alt="Tiny Vacation">
+        </li>
+        <li class="slide">
+          <img src="gallery/lang_yie_ar_kungfu_slider.jpg" alt="Lang from yie ar kungfu">
+        </li>
+         <li class="slide">
+          <img src="gallery/3_summer_days.jpg" alt="Summer days">
+        </li>
+        <li class="slide">
+          <img src="gallery/children_game_concept2.jpg" alt="Children Game Concept">
+        </li>
+        <li class="slide">
+          <img src="gallery/llittle_red_riding_hood_slider.jpg" alt="Little Red Riding Hood">
+        </li>
+      </ul>
+    </figure>
+     
       <h2 class="content-header">Latest news</h2>
-      <div class="content">
-       
-        <article class="news-block">
-          <div class="news-content">
-          <header>
-            <h1>Girl after shower</h1>
-          </header>
-            <div class="news-text">
-              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
-            </div>
-              <a class="preview-img" href="images/news-item-preview.png">Picture</a>
-          </div>
-        </article>
-        
-        <article class="news-block">
-          <div class="news-content">
-          <header>
-            <h1>Girl after shower tons of texts in header and body</h1>
-          </header>
-            <div class="news-text">
-              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
-              <p>Even more text</p>
-            </div>
-            
-            <a class="preview-img" href="images/news-item-preview.png">Picture</a>
-          </div>
-        </article>
+      
+      <article class="news-block">
+        <header class="news-header">
+          <span class="news-date">19 APR 16</span>
+          <h3>Gallery in test mode</h3>
+        </header>
+        <div class="news-content">
+          <p>Gallery now works on the site. It's just a test mode, but you should check it out yourself.
+          </p>
+          <p>To go to the gallery <a href="/gallery.html">click here</a> or use site menu.</p>
+        </div>
+      </article>
 
-        <article class="news-block">
-         <div class="news-content">
-          <header>
-            <h1>Text news</h1>
-          </header>
-          <div class="news-description">
-            <p>Just a text block. Without any picture.</p>
-            <p>But with two paragraphs. When there is no picture this block have to stretch and take up all available space.</p>
-          </div>
-          </div>
-          
-        </article>
-        
-        <article class="news-block">
-          <div class="news-content">
-          <header>
-            <h1>Girl after shower tons of texts in header and body</h1>
-          </header>
-            <div class="news-text">
-              <p>Short picture description. This discription shoud shrink preview picture if needed.</p>
-              <p>Even more text</p>
-            </div>
-            
-            <a class="preview-img" style="background-image:url(images/slider_preview.png)" href="images/slider_preview.png">
+      <article class="news-block">
+        <header class="news-header">
+          <span class="news-date">18 Apr 16</span>
+          <h3>Development continues</h3>
+        </header>
+        <div class="news-content">
+          <p>Site development continues. I'm going to reformat news block. One column much better to consume and get the idea, what goes first, what last.</p>
+          <p>Here is a picture to catch your attantion and test layout.</p>
+          <figure class="preview-img">
+            <a href="gallery/12_cat_and_baloon.jpg">
+              <img src="gallery/12_cat_and_baloon_prev.jpg" alt="A cat and a baloon">
             </a>
-          </div>
-        </article>
-        
-        
-        
-      </div>
+          </figure>
+        </div>
+      </article>
     </section>
 
     <footer class="site-footer">
-      <span>Design by Alexander Emashev 2016</span>
+      <span>Designed by Alexander Emashev 2016</span>
     </footer>
   </div>
 </body>

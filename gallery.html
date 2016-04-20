@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/swipeslider.css">
+  <link rel="stylesheet" href="css/lsb.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-2.2.3.min.js"></script>
+  <script src="js/swipeslider.js"></script>
+<script>
+      (function($) {
+        $.fn.lightspeedBox = function() {
+          var $lsb = $('.lightspeed-box');
+      var $spinner = $('.fading-spinner');
+      var $lsbImage = $lsb.find('.lsb-image');
+      var $next = $lsb.find('.lsb-next');
+      var $prev = $lsb.find('.lsb-prev');
+      
+      var imageCollection = {
+        current: null, 
+        collection: [],
+        getImagesInSet: function(currentHref, groupAttr) {
+          var images = $('.lightspeed-preview');
+          
+          var hrefCollection = [];
+          var currentImage = null;
+    
+          images.each(function(i, element) {
+            var elementHref = element.getAttribute('href');
+            hrefCollection.push(elementHref);
+            if(elementHref === currentHref) {
+              currentImage = i;
+            }
+          });
+          
+          this.collection = hrefCollection;
+          this.current = currentImage;
+        },
+        nextImage: function() {
+          if(this.collection.length <= 1) {
+            return '';
+          }
+          
+          this.current += 1;
+          if (this.current > this.collection.length - 1) {
+            this.current = 0;
+          }
+          
+          return this.collection[this.current];
+        },
+        previousImage: function() {
+          if(this.collection.length <= 1) {
+            return '';
+          }
+          
+          this.current -= 1;
+          if (this.current < 0) {
+            this.current = this.collection.length - 1;
+          }
+          
+          return this.collection[this.current];
+        },
+        canSwitch: function() {
+          return this.collection > 0;
+        }
+      };
+      
+      $next.click(function(event) {
+        event.preventDefault();
+        var img = imageCollection.nextImage();
+        switchImage(img);
+      });
+      
+      $prev.click(function(event) {
+        event.preventDefault();
+        var img = imageCollection.previousImage();
+        switchImage(img);
+      });
+      
+      
+      $lsb.click(function(event) {
+        // Return if lightbox controls were clicked.
+        if ($(event.target.parentElement).hasClass('lsb-controls')) {
+          return;
+        }
+        $lsb.removeClass('lsb-active');
+        $lsbImage.removeClass('lsb-image-loaded');
+        $lsbImage.addClass('lsb-noimage');
+      });
+      
+      $('.lightspeed-preview').click(function(event){
+        event.preventDefault();        
+        var fullSizeHref = event.target.parentElement.getAttribute('href');
+        showLightbox();
+        switchImage(fullSizeHref);
+        });
+      
+      function showLightbox() {
+        // Show lightbox and spinner.
+        $lsb.addClass('lsb-active');
+      }
+      
+      function switchImage(href) {
+        $lsbImage.addClass('lsb-noimage');
+        $lsbImage.removeClass('lsb-image-loaded');
+        $spinner.css('opacity', 1);
+        
+        //Load image.
+        var $img = $('<img />').attr('src', href).on('load', function() {
+          // Get all images to set.
+          imageCollection.getImagesInSet(href);
+          
+          if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+              // Image is broken.
+              //$template.append('<span>No Image</span>');
+            } else {
+              $spinner.css('opacity', 0);
+              //$lsbImage = $lsb.find('.lsb-image');
+              $lsbImage.removeClass('lsb-noimage');
+              $lsbImage.attr('src', $img.attr('src'));
+              $lsbImage.addClass('lsb-image-loaded');
+              // Change size of an image
+              var imagePadding = 50;
+              var docCalcWidth = window.innerWidth - imagePadding * 2; 
+              // Check if window less then 30;
+              var docCalcHeight = window.innerHeight - imagePadding * 2;
+              var imgWidth = $img[0].naturalWidth;
+              var imgHeight = $img[0].naturalHeight;
+              
+              if (imgWidth > docCalcWidth) {
+                var widthDelta = imgWidth - docCalcWidth;
+                imgWidth -= widthDelta;
+                imgHeight -= widthDelta;
+              }
+              
+              if (imgHeight > docCalcHeight) {
+                var heightDelta = imgHeight - docCalcHeight;
+                imgHeight -= heightDelta;
+                imgWidth -= heightDelta;
+              }
+            }
+      });
+      }
+        };
+      }(jQuery));
+    $(window).load(function(){
+      $.fn.lightspeedBox();
+    });
+    </script>
+  <title>Alexander Emashev Secret Laboratory</title>
+</head>
+
+<body>
+ <div class="lightspeed-box">
+  <div class="lsb-content">
+    <img class="lsb-image lsb-noimage">
+    <div class="fading-spinner wait-icon">
+      <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+        <div class="spin-circle"></div>
+    </div>
+    <div class="lsb-controls">
+      <span class="lsb-prev">&lt;&nbsp;</span>
+      <span class="lsb-next">&nbsp;&gt;</span>
+    </div>
+  </div>
+</div>
+ 
+  <div class="main">
+    <header class="site-header">
+      <h1 class="site-logo">
+        <a class="logo-text" href="http://www.alexemashev.com/">
+          <span class="logo-text-highlight">A</span>lex<span class="logo-text-highlight">E</span>mashev.com
+        </a>
+      </h1>
+      <figure class="social">
+        <ul>
+          <li><a class="fa fa-deviantart fa-lg" href="http://cgrey.deviantart.com/gallery/" title="Deviantart"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-github fa-lg" href="https://github.com/AlexEmashev" title="Github"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-instagram fa-lg" href="https://www.instagram.com/constantinegrey/" title="Instagram"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-twitter fa-lg" href="https://twitter.com/2DLife" title="Twitter"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-facebook-square fa-lg" href="https://www.facebook.com/alexander.emashev" title="Facebook"><span class="hidden-text">Deviantart</span></a></li>
+          <li><a class="fa fa-vk fa-lg" href="http://vk.com/constantine_grey"><span class="hidden-text">Deviantart</span></a></li>
+        </ul>
+      </figure>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="index.html">Main</a></li>
+          <li><a href="gallery.html" class="selected">Gallery</a></li>
+          <li><a href="#">Apps</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <section class="site-content">
+      <article class="gallery">
+       <h2>Image Gallery</h2>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/0_tiny_vacation.jpg">
+            <img class="gallery-preview-img" src="/gallery/0_tiny_vacation_prev.jpg" alt="Tiny vacation">
+          </a>
+          <div class="gallery-description">
+            Tiny Vacation
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/1_zootopia_fanart.jpg">
+            <img class="gallery-preview-img" src="/gallery/1_zootopia_fanart_prev.jpg" alt="Zootopia">
+          </a>
+          <div class="gallery-description">
+            Zootopia fanart
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/2_zhenya_everlasting_summer.jpg">
+            <img class="gallery-preview-img" src="/gallery/2_zhenya_everlasting_summer_prev.jpg" alt="Zhenya from Everlasting Summer">
+          </a>
+          <div class="gallery-description">
+            Zhenya from Everlasting Summer
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/3_summer_days.jpg">
+            <img class="gallery-preview-img" src="/gallery/3_summer_days_prev.jpg" alt="Summer Days">
+          </a>
+          <div class="gallery-description">
+            Summer Days
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/4_little_red_riding_hood.jpg">
+            <img class="gallery-preview-img" src="/gallery/4_little_red_riding_hood_prev.jpg" alt="Little Red Riding Hood">
+          </a>
+          <div class="gallery-description">
+            Little Red Riding Hood
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/5_lang_yie_ar_kungfu.jpg">
+            <img class="gallery-preview-img" src="/gallery/5_lang_yie_ar_kungfu_prev.jpg" alt="Lang from Yie Ar Kung-Fu">
+          </a>
+          <div class="gallery-description">
+            Lang from Yie Ar Kung-Fu
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/6_children_game_concepts.jpg">
+            <img class="gallery-preview-img" src="/gallery/6_children_game_concepts_prev.jpg" alt="Children Game Concept">
+          </a>
+          <div class="gallery-description">
+            Children Game Concept
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/7_mafia_bosses.jpg">
+            <img class="gallery-preview-img" src="/gallery/7_mafia_bosses_prev.jpg" alt="Mafia Bosses">
+          </a>
+          <div class="gallery-description">
+            Mafia Bosses
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/8_mafia_gang.jpg">
+            <img class="gallery-preview-img" src="/gallery/8_mafia_gang_prev.jpg" alt="Mafia Gangsters">
+          </a>
+          <div class="gallery-description">
+            Mafia Gangsters
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/9_girly_character.jpg">
+            <img class="gallery-preview-img" src="/gallery/9_girly_character_prev.jpg" alt="Girly Character">
+          </a>
+          <div class="gallery-description">
+            Girly Character
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/10_lucy_wilde.jpg">
+            <img class="gallery-preview-img" src="/gallery/10_lucy_wilde_prev.jpg" alt="Lucy Wilde">
+          </a>
+          <div class="gallery-description">
+            Lucy Wilde
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/11_everything_is_fine.jpg">
+            <img class="gallery-preview-img" src="/gallery/11_everything_is_fine_prev.jpg" alt="Evrything is fine">
+          </a>
+          <div class="gallery-description">
+            Evrything's fine
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/12_cat_and_baloon.jpg">
+            <img class="gallery-preview-img" src="/gallery/12_cat_and_baloon_prev.jpg" alt="Cat and baloon">
+          </a>
+          <div class="gallery-description">
+            A cat and a baloon
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/13_slav_squat.jpg">
+            <img class="gallery-preview-img" src="/gallery/13_slav_squat_prev.jpg" alt="Slav squats">
+          </a>
+          <div class="gallery-description">
+            Slav squats
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/14_victoria_seras.jpg">
+            <img class="gallery-preview-img" src="/gallery/14_victoria_seras_prev.jpg" alt="Victoria Seras">
+          </a>
+          <div class="gallery-description">
+            Victoria Seras
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/15_snow_fary.jpg">
+            <img class="gallery-preview-img" src="/gallery/15_snow_fary_prev.jpg" alt="Snow Fary">
+          </a>
+          <div class="gallery-description">
+            Snow Fary
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/16_redhead.jpg">
+            <img class="gallery-preview-img" src="/gallery/16_redhead_prev.jpg" alt="Redhead">
+          </a>
+          <div class="gallery-description">
+            Redhead
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/17_socrates.jpg">
+            <img class="gallery-preview-img" src="/gallery/17_socrates_prev.jpg" alt="Socrates">
+          </a>
+          <div class="gallery-description">
+            Socrates
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/18_tiny_tina.jpg">
+            <img class="gallery-preview-img" src="/gallery/18_tiny_tina_prev.jpg" alt="Tiny Tina from Borderlands 2">
+          </a>
+          <div class="gallery-description">
+            Tiny Tina from Borderlands 2
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/19_sed_splash.jpg">
+            <img class="gallery-preview-img" src="/gallery/19_sed_splash_prev.jpg" alt="SED splash-screen">
+          </a>
+          <div class="gallery-description">
+            SED (app) splash-screen
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/20_cobalt_blades.jpg">
+            <img class="gallery-preview-img" src="/gallery/20_cobalt_blades_prev.jpg" alt="Cobalt Blades cursor pack">
+          </a>
+          <div class="gallery-description">
+            Cobalt Blades cursor pack
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/21_es.jpg">
+            <img class="gallery-preview-img" src="/gallery/21_es_prev.jpg" alt="ES Logo">
+          </a>
+          <div class="gallery-description">
+            ES Logo
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/22_evro.jpg">
+            <img class="gallery-preview-img" src="/gallery/22_evro_prev.jpg" alt="Ev-Ro Logo">
+          </a>
+          <div class="gallery-description">
+            Ev-Ro Logo
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/23_mustang1.jpg">
+            <img class="gallery-preview-img" src="/gallery/23_mustang1_prev.jpg" alt="Mustang Taxi discount card">
+          </a>
+          <div class="gallery-description">
+            Mustang Taxi discount card
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/24_mustang2.jpg">
+            <img class="gallery-preview-img" src="/gallery/24_mustang2_prev.jpg" alt="Mustang Taxi flyer">
+          </a>
+          <div class="gallery-description">
+            Mustang Taxi flyer
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/25_syndicate_of_fashion.jpg">
+            <img class="gallery-preview-img" src="/gallery/25_syndicate_of_fashion_prev.jpg" alt="Retail store logo">
+          </a>
+          <div class="gallery-description">
+            Retail store logo
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/26_girl_in_bra.jpg">
+            <img class="gallery-preview-img" src="/gallery/26_girl_in_bra_prev.jpg" alt="Girl in bra">
+          </a>
+          <div class="gallery-description">
+            Girl in bra
+          </div>
+        </figure>
+        <figure class="gallery-img">
+          <a class="gallery-preview lightspeed-preview" href="/gallery/27_guy_fawkes.jpg">
+            <img class="gallery-preview-img" src="/gallery/27_guy_fawkes_prev.jpg" alt="Guy fawkes">
+          </a>
+          <div class="gallery-description">
+            Guy fawkes
+          </div>
+        </figure>
+        
+        
+      </article>
+    </section>
+
+    <footer class="site-footer">
+      <span>Designed by Alexander Emashev 2016</span>
+    </footer>
+  </div>
+</body>
+
+</html>
