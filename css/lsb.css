@@ -11,7 +11,7 @@
   margin: auto;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.84);
-  z-index: 999;
+  z-index: 9999;
   transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
   box-sizing: border-box; }
   /* line 18, D:/yadisk/YandexDisk/web-dev/lsb-lightbox/src/lsb.scss */
