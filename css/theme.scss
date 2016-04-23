@@ -8,7 +8,7 @@ $highlight-color: lighten($accent-color, 20%);
 $active-color: lighten($accent-color, 30%);
 $highlight-secondary-color: desaturate(lighten($accent-color, 30%), 20%);
 $inactive-color: #b5b5b5;
-$iface-font-family: "Arial Narrow";
+$iface-font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
 $site-block-width-big: 708px;
 
 @mixin site-block ($border: 10px) {

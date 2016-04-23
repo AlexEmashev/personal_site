@@ -44,14 +44,19 @@ a:visited{
 .main {
   height: 100%;
   margin: 0;
+  margin-top: 75px;
 }
 header.site-header {
+  position: fixed;
+  padding: 0 20px;
+  left: 0;
+  right: 0;
+  top: 0;
   min-width: 660px;
   height: 60px;
-  padding: 0 20px;
-  position: relative;
+  z-index: 1000;
   overflow: visible;
-  background: $bg-color;
+  background: lighten(fade_out($bg-color, 0.07), 30%);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.26);
   &::after {
     content: '';

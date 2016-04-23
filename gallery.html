@@ -3,181 +3,25 @@
 
 <head>
   <meta charset="UTF-8">
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/swipeslider.css">
   <link rel="stylesheet" href="css/lsb.css">
-  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-2.2.3.min.js"></script>
   <script src="js/swipeslider.js"></script>
-<script>
-      (function($) {
-        $.fn.lightspeedBox = function() {
-          var $lsb = $('.lightspeed-box');
-      var $spinner = $('.fading-spinner');
-      var $lsbImage = $lsb.find('.lsb-image');
-      var $next = $lsb.find('.lsb-next');
-      var $prev = $lsb.find('.lsb-prev');
-      
-      var imageCollection = {
-        current: null, 
-        collection: [],
-        getImagesInSet: function(currentHref, groupAttr) {
-          var images = $('.lightspeed-preview');
-          
-          var hrefCollection = [];
-          var currentImage = null;
-    
-          images.each(function(i, element) {
-            var elementHref = element.getAttribute('href');
-            hrefCollection.push(elementHref);
-            if(elementHref === currentHref) {
-              currentImage = i;
-            }
-          });
-          
-          this.collection = hrefCollection;
-          this.current = currentImage;
-        },
-        nextImage: function() {
-          if(this.collection.length <= 1) {
-            return '';
-          }
-          
-          this.current += 1;
-          if (this.current > this.collection.length - 1) {
-            this.current = 0;
-          }
-          
-          return this.collection[this.current];
-        },
-        previousImage: function() {
-          if(this.collection.length <= 1) {
-            return '';
-          }
-          
-          this.current -= 1;
-          if (this.current < 0) {
-            this.current = this.collection.length - 1;
-          }
-          
-          return this.collection[this.current];
-        },
-        canSwitch: function() {
-          return this.collection > 0;
-        }
-      };
-      
-      $next.click(function(event) {
-        event.preventDefault();
-        var img = imageCollection.nextImage();
-        switchImage(img);
-      });
-      
-      $prev.click(function(event) {
-        event.preventDefault();
-        var img = imageCollection.previousImage();
-        switchImage(img);
-      });
-      
-      
-      $lsb.click(function(event) {
-        // Return if lightbox controls were clicked.
-        if ($(event.target.parentElement).hasClass('lsb-controls')) {
-          return;
-        }
-        $lsb.removeClass('lsb-active');
-        $lsbImage.removeClass('lsb-image-loaded');
-        $lsbImage.addClass('lsb-noimage');
-      });
-      
-      $('.lightspeed-preview').click(function(event){
-        event.preventDefault();        
-        var fullSizeHref = event.target.parentElement.getAttribute('href');
-        showLightbox();
-        switchImage(fullSizeHref);
-        });
-      
-      function showLightbox() {
-        // Show lightbox and spinner.
-        $lsb.addClass('lsb-active');
-      }
-      
-      function switchImage(href) {
-        $lsbImage.addClass('lsb-noimage');
-        $lsbImage.removeClass('lsb-image-loaded');
-        $spinner.css('opacity', 1);
-        
-        //Load image.
-        var $img = $('<img />').attr('src', href).on('load', function() {
-          // Get all images to set.
-          imageCollection.getImagesInSet(href);
-          
-          if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-              // Image is broken.
-              //$template.append('<span>No Image</span>');
-            } else {
-              $spinner.css('opacity', 0);
-              //$lsbImage = $lsb.find('.lsb-image');
-              $lsbImage.removeClass('lsb-noimage');
-              $lsbImage.attr('src', $img.attr('src'));
-              $lsbImage.addClass('lsb-image-loaded');
-              // Change size of an image
-              var imagePadding = 50;
-              var docCalcWidth = window.innerWidth - imagePadding * 2; 
-              // Check if window less then 30;
-              var docCalcHeight = window.innerHeight - imagePadding * 2;
-              var imgWidth = $img[0].naturalWidth;
-              var imgHeight = $img[0].naturalHeight;
-              
-              if (imgWidth > docCalcWidth) {
-                var widthDelta = imgWidth - docCalcWidth;
-                imgWidth -= widthDelta;
-                imgHeight -= widthDelta;
-              }
-              
-              if (imgHeight > docCalcHeight) {
-                var heightDelta = imgHeight - docCalcHeight;
-                imgHeight -= heightDelta;
-                imgWidth -= heightDelta;
-              }
-            }
-      });
-      }
-        };
-      }(jQuery));
-    $(window).load(function(){
+  <script src="js/lsb.js"></script>
+  <script>
+    $(window).load(function() {
       $.fn.lightspeedBox();
     });
-    </script>
+  </script>
   <title>Alexander Emashev Secret Laboratory</title>
 </head>
 
-<body>
- <div class="lightspeed-box">
-  <div class="lsb-content">
-    <img class="lsb-image lsb-noimage">
-    <div class="fading-spinner wait-icon">
-      <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-        <div class="spin-circle"></div>
-    </div>
-    <div class="lsb-controls">
-      <span class="lsb-prev">&lt;&nbsp;</span>
-      <span class="lsb-next">&nbsp;&gt;</span>
-    </div>
-  </div>
-</div>
- 
+<body> 
   <div class="main">
     <header class="site-header">
       <h1 class="site-logo">
