@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -13,8 +13,11 @@
   <script src="js/swipeslider.js"></script>
   <script>
     $(window).load(function() {
-      $('#imageSlider').swipeslider({autoPlayTimeout: 5000});
+//      $('#imageSlider').swipeslider({
+//        autoPlayTimeout: 5000
+//      });
     });
+
   </script>
   <title>Alexander Emashev Secret Laboratory</title>
 </head>
@@ -38,7 +41,15 @@
           <li><a class="fa fa-vk fa-lg" href="http://vk.com/constantine_grey"><span class="hidden-text">Deviantart</span></a></li>
         </ul>
       </figure>
-      <nav class="site-nav">
+      <nav class="site-nav" id="siteMenu">
+        <button class="open-button" onclick="document.getElementById('siteMenu').classList.toggle('open');">
+          <span class="hamburger-menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          </span>
+          <span class="hamburger-menu-title">Menu</span>
+        </button>
         <ul>
           <li><a href="index.html" class="selected">Main</a></li>
           <li><a href="gallery.html">Gallery</a></li>
@@ -47,31 +58,31 @@
         </ul>
       </nav>
     </header>
-    
+
     <section class="site-content">
-         <figure class="swipslider" id="imageSlider">
+      <figure class="swipslider" id="imageSlider">
         <h2>Highlights</h2>
-      <ul class="slides">
-        <li class="slide">
-          <img src="gallery/0_tiny_vacation.jpg" alt="Tiny Vacation">
-        </li>
-        <li class="slide">
-          <img src="gallery/lang_yie_ar_kungfu_slider.jpg" alt="Lang from yie ar kungfu">
-        </li>
-         <li class="slide">
-          <img src="gallery/3_summer_days.jpg" alt="Summer days">
-        </li>
-        <li class="slide">
-          <img src="gallery/children_game_concept2.jpg" alt="Children Game Concept">
-        </li>
-        <li class="slide">
-          <img src="gallery/llittle_red_riding_hood_slider.jpg" alt="Little Red Riding Hood">
-        </li>
-      </ul>
-    </figure>
-     
+        <ul class="slides">
+          <li class="slide">
+            <img src="gallery/0_tiny_vacation.jpg" alt="Tiny Vacation">
+          </li>
+          <li class="slide">
+            <img src="gallery/lang_yie_ar_kungfu_slider.jpg" alt="Lang from yie ar kungfu">
+          </li>
+          <li class="slide">
+            <img src="gallery/3_summer_days.jpg" alt="Summer days">
+          </li>
+          <li class="slide">
+            <img src="gallery/children_game_concept2.jpg" alt="Children Game Concept">
+          </li>
+          <li class="slide">
+            <img src="gallery/llittle_red_riding_hood_slider.jpg" alt="Little Red Riding Hood">
+          </li>
+        </ul>
+      </figure>
+
       <h2 class="content-header">Latest news</h2>
-      
+
       <article class="news-block">
         <header class="news-header">
           <span class="news-date">19 APR 16</span>
