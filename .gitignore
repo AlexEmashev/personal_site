@@ -16,3 +16,11 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Build Systems #
+######################
+node_modules/
+bower_components/
+dist/vendor
+.sass-cache
+*.css.map

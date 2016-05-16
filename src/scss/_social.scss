@@ -1,0 +1,44 @@
+.social-block {
+  display: block;
+  float: right;
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+  vertical-align: middle;
+  width: 88px;
+  word-spacing: 5px;
+  @include breakpoint(mobile) {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+.social-btn {
+  @include text-highlight-enable;
+  color: $text-color-light;
+  text-decoration: none;
+
+  span {
+    width: 23px;
+    height: 23px;
+  }
+
+  &:link {
+    color: $text-color-light;
+  }
+
+  &:visited {
+    color: $text-color-light;
+  }
+
+  &:hover {
+    @include text-highlight;
+  }
+
+  &:active {
+    color: $accent-color;
+  }
+}

@@ -1,0 +1,20 @@
+#imageSlider {
+  @include site-block($border: 1px 0 0px);
+  height: 300px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+
+  h2 {
+    color: $text-color-light;
+    margin: 0;
+    padding: 3px;
+  }
+
+  .slides {
+    .slide {
+      background: $bg-color;
+      background: linear-gradient(darken($bg-dark, 6%), $bg-dark 5%, $bg-dark 95%, darken($bg-dark, 6%));
+    }
+  }
+}

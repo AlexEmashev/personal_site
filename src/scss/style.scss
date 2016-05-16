@@ -1,0 +1,81 @@
+@import 'theme';
+@import '_header';
+@import '_news';
+@import '_social';
+@import '_site_logo';
+@import '_hamburger_menu';
+@import '_slider';
+@import '_gallery';
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background: $bg-dark;
+}
+
+a {
+  &:link {
+    color: $link;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $link-active;
+  }
+
+  &:visited {
+    color: $link-visited;
+  }
+}
+
+.main {
+  height: 100%;
+  margin: 75px 0 0;
+}
+
+
+.site-content {
+  margin: 15px auto;
+  max-width: $site-block-width-big;
+  overflow: hidden;
+  text-align: center;
+
+  h2 {
+    color: $text-color;
+    font-family: $iface-font-family;
+    font-weight: lighter;
+    padding-bottom: 10px;
+    padding-top: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.site-footer {
+  color: $bg-dark;
+  font-size: smaller;
+  overflow: hidden;
+  padding: 10px 0 5px;
+  text-align: center;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "alexemashev.com",
+  "description": "Personal web-site project.",
+  "main": "dist/index.html",
+  "authors": [
+    "Alexander Emashev"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "website",
+    "alexemashev.com",
+    "responsive"
+  ],
+  "homepage": "https://github.com/AlexEmashev/personal_website",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^4.1.1",
+    "swipeslider": "^2.0.0",
+    "font-awesome": "fontawesome#^4.6.2"
+  }
+}

@@ -1,0 +1,36 @@
+// Gallery style
+.gallery {
+  // 320 x 240
+  .gallery-img {
+    @include site-block($border: 3px);
+    display: block;
+    float: left;
+    height: 211px;
+    margin: 5px;
+    overflow: hidden;
+    width: 226px;
+
+    .gallery-preview {
+      position: relative;
+
+      .gallery-preview-img {
+        height: auto;
+        padding: 5px;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    .gallery-description {
+      font-size: smaller;
+      padding: 5px;
+      text-align: center;
+    }
+  }
+
+  &::after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}

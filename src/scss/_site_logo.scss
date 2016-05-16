@@ -1,0 +1,33 @@
+.site-logo {
+  color: $logo-color;
+  display: table;
+  float: left;
+  font-family: $iface-font-family;
+  font-size: 22px;
+  font-weight: lighter;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+  vertical-align: middle;
+
+  .logo-text {
+    @include text-highlight-enable;
+    display: table-cell;
+    text-decoration: none;
+    vertical-align: middle;
+
+    &:link,
+    &:visited {
+      color: #818181;
+    }
+
+    &:hover {
+      @include text-highlight;
+    }
+  }
+
+  .logo-text-highlight {
+    color: $highlight-color;
+  }
+}

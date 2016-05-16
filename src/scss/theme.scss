@@ -1,0 +1,50 @@
+// Main constants
+$bg-light: #fff;
+$bg-dark: #9d9d9d;
+
+$link: #45618e;
+$link-visited: #45618e;
+$link-active: #58bcd9;
+
+$iface-block-shadow: 1px 2px 2px .05px rgba(0, 0, 0, .29);
+
+// Logo colors
+$logo-color: #afafaf;
+
+$bg-color: #ebebeb;
+
+$text-color: #535353;
+$text-color-light: #989898;
+$accent-color: #16c5e4;
+
+$highlight-color: lighten($accent-color, 20%);
+$active-color: lighten($accent-color, 30%);
+$highlight-secondary-color: desaturate(lighten($accent-color, 30%), 20%);
+$inactive-color: #b5b5b5;
+$iface-font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+$site-block-width-big: 708px;
+
+// responsive mixin
+@mixin breakpoint($point: mobile) {
+  @if $point == mobile {
+    @media screen and (max-width: 680px) { @content; }
+  }
+}
+
+@mixin site-block ($border: 10px) {
+  background-color: $bg-light;
+  border-color: $bg-light;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: $border;
+  box-shadow: $iface-block-shadow;
+}
+
+@mixin text-highlight-enable {
+  transition: .3s ease-in;
+}
+
+@mixin text-highlight {
+  color: $accent-color;
+  text-shadow: 0 0 15px transparentize($accent-color, 0.5);
+}

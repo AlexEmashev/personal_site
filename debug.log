@@ -1,0 +1,5 @@
+[0509/221842:ERROR:process_reader_win.cc(172)] ResumeThread: The operation completed successfully. (0x0)
+[0509/221842:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0509/221842:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0509/221842:ERROR:process_reader_win.cc(141)] SuspendThread: Access is denied. (0x5)
+[0509/221842:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558

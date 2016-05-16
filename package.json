@@ -1,0 +1,38 @@
+{
+  "name": "alexemashev.com",
+  "version": "1.0.0",
+  "description": "Personal web-site project.",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexEmashev/personal_website.git"
+  },
+  "keywords": [
+    "website",
+    "alexemashev.com",
+    "responsive"
+  ],
+  "author": "Alexander Emashev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexEmashev/personal_website/issues"
+  },
+  "homepage": "https://github.com/AlexEmashev/personal_website#readme",
+  "devDependencies": {
+    "beepbeep": "^1.2.0",
+    "browser-sync": "^2.12.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-batch": "^1.0.5",
+    "gulp-nunjucks-render": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-uglify": "^1.5.3",
+    "gulp-watch": "^4.3.5"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% set title = title | default('') %}
+  <title>Alexander Emashev | {{title}}</title>
+  <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
+  <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+  <script src="/vendor/jquery/dist/jquery.js"></script>
+  <link rel="stylesheet" href="/vendor/swipeslider/dist/swipeslider.css">
+  <script src="/vendor/swipeslider/dist/swipeslider.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+  $(window).load(function() {
+//      $('#imageSlider').swipeslider({
+//        autoPlayTimeout: 5000
+//      });
+  });
+</script>
+</head>
+<body>
+  <div class="main">
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+</body>
+</html>

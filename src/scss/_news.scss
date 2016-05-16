@@ -1,0 +1,48 @@
+// News block
+.news-block {
+  @include site-block;
+  display: block;
+  margin: 0 auto 15px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .news-header {
+    .news-date {
+      color: $highlight-secondary-color;
+      display: block;
+      font-size: smaller;
+      font-weight: bold;
+      text-align: right;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      color: $text-color-light;
+      font-weight: lighter;
+      position: relative;
+      text-transform: uppercase;
+      top: -5px;
+    }
+  }
+
+  .news-content {
+    color: $text-color-light;
+    padding: 0 5px;
+    text-align: left;
+
+    p {
+      margin-bottom: 5px;
+      margin-top: 1px;
+    }
+
+    .preview-img {
+      display: block;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}

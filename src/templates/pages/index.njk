@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% set title = "Main Page" %}
+{% import 'macros/_nav.njk' as nav %}
+
+{% block content %}
+{{nav.active('main')}}
+  <h1>This is index html</h1>
+m?
+Hello here.
+  <p>Plain text.</p>
+  <p>Another paragraph.</p>
+  <p>Another paragraph.</p>
+  <p>Another paragraph.</p>
+  Hello.
+  Hello?
+  Hello again?
+  Is it working?
+  <a href="#">Typical link.</a>
+  Hello?
+  No reload.
+{% endblock %}
