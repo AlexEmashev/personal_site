@@ -27,7 +27,13 @@ $site-block-width-big: 708px;
 // responsive mixin
 @mixin breakpoint($point: mobile) {
   @if $point == mobile {
-    @media screen and (max-width: 680px) { @content; }
+    @media screen and (max-width: 425px) { @content; }
+  }
+  @if $point == tablet {
+    @media screen and (max-width: 768px) { @content; }
+  }
+  @if $point == desktop {
+    @media screen and (min-width: 769px) { @content; }
   }
 }
 

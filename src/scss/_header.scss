@@ -9,6 +9,18 @@
   right: 0;
   top: 0;
   z-index: 1000;
+  @include breakpoint(tablet) {
+    overflow: visible;
+    .site-logo {
+      font-size: 22px;
+    }
+  }
+  @include breakpoint(mobile) {
+    overflow: visible;
+    .site-logo {
+      font-size: 14px;
+    }
+  }
 
   &::after {
     clear: both;
@@ -23,6 +35,18 @@
   overflow: hidden;
   position: relative;
   text-align: center;
+  @include breakpoint(tablet) {
+    float: right;
+    overflow: visible;
+  }
+}
+
+.site-nav.open .nav-items{
+  @include breakpoint(tablet) {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
 }
 
 .nav-items {
@@ -33,6 +57,19 @@
   text-align: center;
   top: 10px;
   vertical-align: bottom;
+  @include breakpoint(tablet) {
+    display: block;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    min-width: 230px;
+    transition: 0.2s all;
+    visibility: hidden;
+    overflow: visible;
+    box-shadow: $iface-block-shadow;
+  }
 }
 
 .nav-item {
@@ -40,6 +77,19 @@
 
   &:not(first-child) {
     margin-right: 20px;
+  }
+
+  @include breakpoint(tablet) {
+    background-color: lighten(fade_out($bg-color, 0.07), 30%);
+    display: block;
+    &:not(first-child) {
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      padding-bottom: 10px;
+    }
   }
 }
 
@@ -52,22 +102,27 @@
     text-decoration: none;
     text-transform: uppercase;
   }
+
   &:visited {
     color: $text-color;
   }
+
   &:hover {
     @include text-highlight;
     text-decoration: underline;
   }
+
   &:active {
     color: $active-color;
   }
 
   &.selected {
     color: $accent-color;
+
     &:hover {
       color: $highlight-color;
     }
+
     &:active {
       color: $active-color;
     }
@@ -84,6 +139,10 @@
   color: $text-color;
   font-size: 27px;
   text-align: left;
+  cursor: pointer;
+  @include breakpoint(tablet) {
+    display: block;
+  }
 }
 
 .site-nav .hamburger-menu-icon span {
@@ -95,57 +154,5 @@
   color: $accent-color;
   .hamburger-menu-icon span {
     background-color: $accent-color;
-  }
-}
-
-// Make the menu responsive
-@media screen and (max-width: 680px) {
-  .site-header {
-    overflow: visible;;
-    .site-logo {
-      font-size: 14px;
-    }
-  }
-  .site-nav {
-    float: right;
-    overflow: visible;;
-  }
-
-  .nav-open-button {
-    display: block;
-  }
-
-  .nav-items {
-    display: block;
-    margin: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: -20px;
-    min-width: 230px;
-    transition: 0.2s all;
-    visibility: hidden;
-    overflow: visible;
-    box-shadow: $iface-block-shadow;
-  }
-
-  .site-nav.open .nav-items{
-        opacity: 1;
-        top: 100%;
-        visibility: visible;
-  }
-
-  .nav-item {
-    background-color: lighten(fade_out($bg-color, 0.07), 30%);
-    display: block;
-
-    &:not(first-child) {
-      margin: 0;
-    }
-
-    a {
-      display: block;
-      padding-bottom: 10px;
-    }
   }
 }

@@ -7,7 +7,7 @@
   vertical-align: middle;
   width: 88px;
   word-spacing: 5px;
-  @include breakpoint(mobile) {
+  @include breakpoint(tablet) {
     display: none;
   }
 

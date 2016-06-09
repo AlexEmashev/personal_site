@@ -1,7 +1,7 @@
 // Menu icon
 .hamburger-menu-icon {
   $hm-size: 25px;
-  $hm-bg-color: #fff;
+  $hm-bg-color: $bg-color;
   position: relative;
   cursor: pointer;
   display: inline-block;

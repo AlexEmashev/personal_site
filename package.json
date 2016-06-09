@@ -23,7 +23,7 @@
   "homepage": "https://github.com/AlexEmashev/personal_website#readme",
   "devDependencies": {
     "beepbeep": "^1.2.0",
-    "browser-sync": "^2.12.5",
+    "browser-sync": "^2.12.8",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
@@ -32,6 +32,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.6",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "gulp-watch": "^4.3.5"
   }

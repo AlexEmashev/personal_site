@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     batch = require('gulp-batch'),
     sass = require('gulp-ruby-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     nunjucksRender = require('gulp-nunjucks-render'),
     watch = require('gulp-watch'),
@@ -33,12 +34,14 @@ gulp.task('default', ['compile']);
 gulp.task('scss', function() {
   return sass('src/scss/style.scss')
   .on('error', sass.logError)
+  .pipe(sourcemaps.init())
   .pipe(autoprefixer('last 2 versions'))
-  .pipe(gulp.dest('dist/css/'));
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./dist/css/'));
   //.pipe(reload({stream:true}));
 });
 
-gulp.task('compile', function() {
+gulp.task('watch', function() {
   watch('src/scss/**/*.scss',function () {
     gulp.start('scss');
   });
