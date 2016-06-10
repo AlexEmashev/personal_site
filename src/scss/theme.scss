@@ -23,6 +23,7 @@ $highlight-secondary-color: desaturate(lighten($accent-color, 30%), 20%);
 $inactive-color: #b5b5b5;
 $iface-font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
 $site-block-width-big: 708px;
+$footer-height: 50px;
 
 // responsive mixin
 @mixin breakpoint($point: mobile) {

@@ -53,6 +53,8 @@ a {
 .main {
   height: 100%;
   margin: 75px 0 0;
+  position: relative;
+  padding-bottom: $footer-height;
 }
 
 
@@ -74,9 +76,11 @@ a {
 }
 
 .site-footer {
-  color: $bg-dark;
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
   font-size: smaller;
   overflow: hidden;
-  padding: 10px 0 5px;
   text-align: center;
 }
