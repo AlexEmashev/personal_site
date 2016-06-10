@@ -1,5 +1,5 @@
 .social-block {
-  display: block;
+  display: none;
   float: right;
   list-style: none;
   margin: 10px 0 0 0;
@@ -7,8 +7,8 @@
   vertical-align: middle;
   width: 88px;
   word-spacing: 5px;
-  @include breakpoint(tablet) {
-    display: none;
+  @include breakpoint(desktop) {
+    display: block;
   }
 
   li {

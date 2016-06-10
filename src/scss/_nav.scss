@@ -1,0 +1,167 @@
+
+.site-nav {
+  display: block;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  float: right;
+  overflow: visible;
+  top: 0;
+  
+  @include breakpoint(desktop) {
+    float: none;
+    overflow: hidden;
+  }
+}
+
+.site-nav.open .nav-items{
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
+  top: 100%;
+  
+  @include breakpoint(desktop) {
+    top: 50%;
+  }
+}
+
+.nav-items {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  display: block;
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  bottom: 100%;
+  right: -20px;
+  min-width: 230px;
+  transition: 0.2s opacity;
+  visibility: hidden;
+  overflow: visible;
+  box-shadow: $iface-block-shadow;
+  
+  @include breakpoint(desktop) {
+    display: inline-block;
+    position: absolute;
+//    top: 50%;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+    opacity: 1;
+    box-shadow: none;
+    overflow: hidden;
+    min-width: 0;
+  }
+}
+
+.nav-item {
+  background-color: lighten(fade_out($bg-color, 0.07), 30%);
+  display: block;
+  visibility: visible;
+  &:not(first-child) {
+    margin: 0;
+  }
+  a {
+    display: block;
+    padding-bottom: 10px;
+  }
+  
+  @include breakpoint(desktop) {
+    background-color: transparent;
+    display: inline-block;
+    &:not(first-child) {
+      margin-right: 20px;
+    }
+    
+    a {
+      display: inline-block;
+      padding-bottom: 0;
+    }
+  }
+  
+//display: inline-block;
+
+//  &:not(first-child) {
+//    margin-right: 20px;
+//  }
+//
+//  @include breakpoint(tablet) {
+//    background-color: lighten(fade_out($bg-color, 0.07), 30%);
+//    display: block;
+//    &:not(first-child) {
+//      margin: 0;
+//    }
+//
+//    a {
+//      display: block;
+//      padding-bottom: 10px;
+//    }
+//  }
+}
+
+.nav-link {
+  &:link {
+    @include text-highlight-enable;
+    color: $text-color;
+    font-family: $iface-font-family;
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    @include text-highlight;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+
+  &.selected {
+    color: $accent-color;
+
+    &:hover {
+      color: $highlight-color;
+    }
+
+    &:active {
+      color: $active-color;
+    }
+  }
+}
+
+.nav-open-button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: $text-color;
+  font-size: 27px;
+  text-align: left;
+  cursor: pointer;
+  @include breakpoint(desktop) {
+    display: none;
+  }
+}
+
+.site-nav .hamburger-menu-icon span {
+  background-color: $text-color;
+}
+
+
+.site-nav.open .nav-open-button {
+  color: $accent-color;
+  .hamburger-menu-icon span {
+    background-color: $accent-color;
+  }
+}
