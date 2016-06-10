@@ -1,0 +1,39 @@
+{% extends "layout.njk" %}
+{% set title = "Gallery" %}
+{% import 'macros/_nav.njk' as nav %}
+
+{% block content %}
+{{nav.active('gallery')}}
+  
+  
+  {{images}}
+  {% set images = [{
+    title: 'Tiny Vacation',
+    href: 'gallery/0_tiny_vacation.jpg',
+    hrefPreview: 'gallery/0_tiny_vacation_prev.jpg'
+    },{
+    title: 'Zootopia Fanart',
+    href: 'gallery/1_zootopia_fanart.jpg',
+    hrefPreview: 'gallery/1_zootopia_fanart_prev.jpg'
+    }
+  ] %}
+  
+  <section>
+  <h1>Gallery</h1>
+   <h2>Some gallery</h2>
+  <ul class="gallery">
+    {% for image in images %}
+      <li class="gallery-img">
+        <a href="{{image.href}}" class="lsb-preview gallery-preview" data-lsb-group="gallery">
+          <img class="gallery-preview-img" src="{{image.hrefPreview}}" alt="{{image.title}}">
+        </a>
+        <div class="gallery-img-descr">
+          {{image.title}}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  </section>
+  
+  
+{% endblock %}
