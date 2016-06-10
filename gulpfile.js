@@ -37,8 +37,8 @@ gulp.task('scss', function() {
   .pipe(sourcemaps.init())
   .pipe(autoprefixer('last 2 versions'))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./dist/css/'));
-  //.pipe(reload({stream:true}));
+  .pipe(gulp.dest('./dist/css/'))
+  .pipe(reload({stream:true}));
 });
 
 gulp.task('watch', function() {
@@ -48,6 +48,7 @@ gulp.task('watch', function() {
   watch('src/templates/**/*.+(html|njk|nunjucks)', function () {
     gulp.start('html');
   });
+  gulp.start('browser-sync');
 });
 
 ///////////////////////////////////////////////////
@@ -58,8 +59,8 @@ gulp.task('html', function() {
   .pipe(plumber())
   .pipe(nunjucksRender(nunjucksDefaults))
   .on('error', errorlog)
-  .pipe(gulp.dest('dist/'));
-  //.pipe(reload({stream:true}));
+  .pipe(gulp.dest('dist/'))
+  .pipe(reload({stream:true}));
 });
 
 ///////////////////////////////////////////////////
@@ -71,6 +72,6 @@ gulp.task('browser-sync', function() {
       baseDir: "./dist/"
     }
   });
-  watch('./dist/**/*')
-  .pipe(reload({stream:true}));
+  //watch('./dist/**/*')
+  //.pipe(reload({stream:true}));
 });
