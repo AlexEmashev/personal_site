@@ -22,7 +22,8 @@
   top: 100%;
   
   @include breakpoint(desktop) {
-    top: 50%;
+    bottom: 10%;
+    top: auto;
   }
 }
 
@@ -45,10 +46,10 @@
   @include breakpoint(desktop) {
     display: inline-block;
     position: absolute;
-    bottom: 50%;
+    bottom: 10%;
     left: 0;
     right: 0;
-    transform: translateY(50%);
+    //transform: translateY(50%);
     opacity: 1;
     box-shadow: none;
     overflow: hidden;
@@ -90,6 +91,7 @@
     font-size: 22px;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 300;
   }
 
   &:visited {

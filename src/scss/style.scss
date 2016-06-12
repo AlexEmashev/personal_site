@@ -1,4 +1,5 @@
 @import 'theme';
+@import '_helpers';
 @import '_header';
 @import '_nav';
 @import '_news';
@@ -10,7 +11,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: $iface-font-family;
+  color: #3e4347;
 }
 
 h1,
@@ -21,7 +23,16 @@ h5,
 h6 {
   margin: 0;
 }
-
+h3 {
+  font-weight: 300;
+  letter-spacing: 0;
+  font-size: 1.22em;
+  line-height: 1.2;
+  margin-top: .17em;
+  margin-right: 0;
+  margin-bottom: .482em;
+  margin-left: 0;
+}
 body,
 html {
   height: 100%;
@@ -49,9 +60,33 @@ a {
     color: $link-visited;
   }
 }
+p {
+  font-size: 1em;
+  line-height: 1.617em;
+  margin-bottom: 1.618em;
+  margin-top: 0;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0;
+  letter-spacing: 0;
+}
+ul, ol {
+  font-size: 1em;
+  line-height: 1.618em;
+  margin: -1em auto 0 0;
+  margin-top: -1.618em;
+  margin-bottom: 1.618em;
+  font-weight: 400;
+  list-style: disc;
+  padding-left: 2em;
+}
+li {
+  margin: 0;
+  font-size: 15px;
+}
 
 .main {
-  height: 100%;
+  min-height: 100%;
   margin: 75px 0 0;
   position: relative;
   padding-bottom: $footer-height;
@@ -61,18 +96,19 @@ a {
 .site-content {
   margin: 15px auto;
   max-width: $site-block-width-big;
-  overflow: hidden;
   text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
-  h2 {
-    color: $text-color;
-    font-family: $iface-font-family;
-    font-weight: lighter;
-    padding-bottom: 10px;
-    padding-top: 18px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+h2.section-header {
+  color: $text-color;
+  font-family: $iface-font-family;
+  font-weight: lighter;
+  padding-bottom: 10px;
+  padding-top: 18px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .site-footer {

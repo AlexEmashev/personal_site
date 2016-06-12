@@ -3,13 +3,16 @@
   display: table;
   float: left;
   font-family: $iface-font-family;
-  font-size: 22px;
+  font-size: 14px;
   font-weight: lighter;
   height: 100%;
   margin: 0;
   text-align: center;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
   vertical-align: middle;
+  @include breakpoint(tablet) {
+    font-size: 22px;
+  }
 
   .logo-text {
     @include text-highlight-enable;

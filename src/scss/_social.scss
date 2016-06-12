@@ -7,6 +7,7 @@
   vertical-align: middle;
   width: 88px;
   word-spacing: 5px;
+  line-height: 1em;
   @include breakpoint(desktop) {
     display: block;
   }
@@ -24,6 +25,11 @@
   span {
     width: 23px;
     height: 23px;
+    font-size: 22px;
+    color: $text-color-light;
+    &:hover {
+      @include text-highlight;
+    }
   }
 
   &:link {

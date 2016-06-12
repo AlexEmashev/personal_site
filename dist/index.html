@@ -7,18 +7,20 @@
   
   <title>Alexander Emashev | Main Page</title>
   <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-  <script src="/vendor/jquery/dist/jquery.js"></script>
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/vendor/lightspeedbox/dist/lsb.css">
+  <script src="/vendor/lightspeedbox/dist/lsb.min.js"></script>
   <link rel="stylesheet" href="/vendor/swipeslider/dist/swipeslider.css">
   <script src="/vendor/swipeslider/dist/swipeslider.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script>
-  $(window).load(function() {
-//      $('#imageSlider').swipeslider({
-//        autoPlayTimeout: 5000
-//      });
-  });
-</script>
+    $(window).load(function() {
+      $.fn.lightspeedBox();
+    });
+  </script>
 </head>
 <body>
   <div class="main">
@@ -82,7 +84,127 @@
 
 </header>
 
-  <h1>This is index html</h1>
+
+
+<section class="site-content">
+  <script>
+  $(window).load(function() {
+      $('#swipeslider').swipeslider({
+        sliderHeight: '43%',
+        autoPlayTimeout: 5000
+      });
+  });
+</script>
+
+
+
+
+ <div class="slider-container">
+  <header class="slider-header">
+  <h2 class="block-title">Highlights</h2>
+  </header>
+  <figure id="swipeslider" class="swipeslider">
+    <ul class="sw-slides">
+      
+        <li class="sw-slide">
+          <figure class="sw-content">
+          <a class="lsb-preview" href="gallery/0_tiny_vacation.jpg">
+            <img src="gallery/0_tiny_vacation.jpg" alt="Tiny vacation">
+          </a>
+          </figure>
+        </li>
+      
+        <li class="sw-slide">
+          <figure class="sw-content">
+          <a class="lsb-preview" href="gallery/llittle_red_riding_hood_slider.jpg">
+            <img src="gallery/llittle_red_riding_hood_slider.jpg" alt="Little Red Riding Hood">
+          </a>
+          </figure>
+        </li>
+      
+        <li class="sw-slide">
+          <figure class="sw-content">
+          <a class="lsb-preview" href="gallery/3_summer_days.jpg">
+            <img src="gallery/3_summer_days.jpg" alt="Summer Days">
+          </a>
+          </figure>
+        </li>
+      
+        <li class="sw-slide">
+          <figure class="sw-content">
+          <a class="lsb-preview" href="gallery/5_lang_yie_ar_kungfu.jpg">
+            <img src="gallery/5_lang_yie_ar_kungfu.jpg" alt="Lang from Yie Ar Kung-Fu">
+          </a>
+          </figure>
+        </li>
+      
+    </ul>
+  </figure>
+</div>
+
+<h2 class="section-header">Latest News</h2>
+
+<!-- News Content -->
+
+
+<aticle class="news-block">
+  <header class="news-header">
+    <span class="news-date">4 May 16</span>
+    <h3 class="block-title">Swipeslider - jQuery slider plugin</h3>
+  </header>
+  
+  <div class="news-content">
+    <p>In order to learn JavaScript and jQuery closer I've decided to develop a plugin. This is an image slider component, that makes a slideshow on a web-page. It's easy to install and use. It's already used on this web-site. For more information, please see <a href="/apps.html">this page</a>.</p>
+  </div>
+</aticle>
+ 
+ 
+<aticle class="news-block">
+  <header class="news-header">
+    <span class="news-date">18 Apr 16</span>
+    <h3 class="block-title">Site development progress</h3>
+  </header>
+  
+  <div class="news-content">
+    <p>Site development continues. I've selected technology stack for this development iteration. 
+Here are list of them:</p>
+    <ul>
+      <li><a href="http://sass-lang.com/">SCSS</a> for styles, because it's easy to learn and really powerfull;</li>
+      <li><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> as a template engine for HTML. First I thought about AngularJS as a framework for site, but now I'm think it's bit an overkill. Nunjucks on the otherhand has everything I need: macroses, partials, for-each loops;</li>
+      <li>As for icons I've chosen <a href="http://fontawesome.io/">Font Awesome</a>, because it's awesome;</li>
+      <li><a href="http://gulpjs.com/">Gulp</a> for build system. It has tons of plugins and syntax that is easy to comprehend (I like code over configuration idea);</li>
+      <li>For frontend dependancies managment I chose <a href="https://bower.io/">Bower</a>.</li>
+    </ul>
+    <p>This report got it's main aim to check the layout of the news block.</p>
+  </div>
+</aticle>
+<aticle class="news-block">
+  <header class="news-header">
+    <span class="news-date">18 Apr 16</span>
+    <h3 class="news-title">Site development progress</h3>
+  </header>
+  <div class="news-content">
+    <p></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+  </div>
+</aticle>
+
+<aticle class="news-block">
+  <header class="news-header">
+    <span class="news-date">10 Jun 16</span>
+    <h3 class="news-title">News</h3>
+  </header>
+  <div class="news-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos dolorum quam possimus quasi eius impedit voluptatem delectus eum ut officia.</p>
+  </div>
+</aticle>
+</section>
 m?
 Hello here.
   <p>Plain text.</p>
@@ -99,7 +221,7 @@ Hello here.
 
     
     <footer class="site-footer">
-      Hello I'm a footer!
+      <div>Hello I'm a footer!</div>
     </footer>
   </div>
 </body>

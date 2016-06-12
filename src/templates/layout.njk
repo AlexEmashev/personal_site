@@ -7,18 +7,20 @@
   {% set title = title | default('') %}
   <title>Alexander Emashev | {{title}}</title>
   <link rel="stylesheet" href="/vendor/normalize-css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
-  <script src="/vendor/jquery/dist/jquery.js"></script>
+  <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/vendor/lightspeedbox/dist/lsb.css">
+  <script src="/vendor/lightspeedbox/dist/lsb.min.js"></script>
   <link rel="stylesheet" href="/vendor/swipeslider/dist/swipeslider.css">
   <script src="/vendor/swipeslider/dist/swipeslider.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script>
-  $(window).load(function() {
-//      $('#imageSlider').swipeslider({
-//        autoPlayTimeout: 5000
-//      });
-  });
-</script>
+    $(window).load(function() {
+      $.fn.lightspeedBox();
+    });
+  </script>
 </head>
 <body>
   <div class="main">
@@ -27,7 +29,7 @@
     {% endblock content %}
     
     <footer class="site-footer">
-      Hello I'm a footer!
+      <div>Hello I'm a footer!</div>
     </footer>
   </div>
 </body>

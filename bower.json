@@ -22,8 +22,8 @@
   ],
   "dependencies": {
     "normalize-css": "^4.1.1",
-    "swipeslider": "^2.0.0",
+    "swipeslider": "^2",
     "font-awesome": "fontawesome#^4.6.2",
-    "lightspeedbox": "~1.0.0"
+    "lightspeedbox": "^1"
   }
 }

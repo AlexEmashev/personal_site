@@ -1,0 +1,40 @@
+  <script>
+  $(window).load(function() {
+      $('#swipeslider').swipeslider({
+        sliderHeight: '43%',
+        autoPlayTimeout: 5000
+      });
+  });
+</script>
+
+{% set slides = [{
+  alt: 'Tiny vacation',
+  href: 'gallery/0_tiny_vacation.jpg'
+  },{alt: 'Little Red Riding Hood',
+  href: 'gallery/llittle_red_riding_hood_slider.jpg'
+  },{alt: 'Summer Days',
+  href: 'gallery/3_summer_days.jpg'
+  },{alt: 'Lang from Yie Ar Kung-Fu',
+  href: 'gallery/5_lang_yie_ar_kungfu.jpg'
+  }
+] %}
+
+
+ <div class="slider-container">
+  <header class="slider-header">
+  <h2 class="block-title">Highlights</h2>
+  </header>
+  <figure id="swipeslider" class="swipeslider">
+    <ul class="sw-slides">
+      {% for slide in slides %}
+        <li class="sw-slide">
+          <figure class="sw-content">
+          <a class="lsb-preview" href="{{slide.href}}">
+            <img src="{{slide.href}}" alt="{{slide.alt}}">
+          </a>
+          </figure>
+        </li>
+      {% endfor %}
+    </ul>
+  </figure>
+</div>
