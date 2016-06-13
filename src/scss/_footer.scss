@@ -1,0 +1,18 @@
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
+  font-size: smaller;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 300;
+  
+  .source-link {
+    margin-top: 11px;
+  }
+  .copyright {
+    margin-top: 2px;
+    font-weight: 400;
+  }
+}

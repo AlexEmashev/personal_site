@@ -8,6 +8,8 @@
 @import '_hamburger_menu';
 @import '_slider';
 @import '_gallery';
+@import '_footer';
+@import '_about';
 
 * {
   box-sizing: border-box;
@@ -40,6 +42,8 @@ html {
 
 body {
   background: $bg-dark;
+  background-image: url('../img/img-noise-200x200.png');
+  background-repeat: repeat;
 }
 
 a {
@@ -60,6 +64,9 @@ a {
     color: $link-visited;
   }
 }
+strong {
+  font-weight: 500;
+}
 p {
   font-size: 1em;
   line-height: 1.617em;
@@ -73,8 +80,8 @@ p {
 ul, ol {
   font-size: 1em;
   line-height: 1.618em;
-  margin: -1em auto 0 0;
-  margin-top: -1.618em;
+  margin: 0 auto 0 0;
+  //margin-top: -1.618em;
   margin-bottom: 1.618em;
   font-weight: 400;
   list-style: disc;
@@ -111,12 +118,47 @@ h2.section-header {
   text-transform: uppercase;
 }
 
-.site-footer {
+.site-block {
+  @include site-block;
+  display: block;
+  margin: 0 auto 15px;
+  position: relative;
+  max-width: $site-block-width-big;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.site-block-header {
+  @include site-block-header;
+}
+
+.block-content {
+  color: $text-color-light;
+  padding: 0 5px;
+  text-align: left;
+
+  .preview-img {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.block-date {
+  color: $highlight-secondary-color;
+  display: block;
   position: absolute;
-  bottom: 0;
-  height: $footer-height;
-  width: 100%;
-  font-size: smaller;
-  overflow: hidden;
-  text-align: center;
+  top: 0;
+  right: 0;
+  font-size: 10px;
+  font-weight: 300;
+  text-align: right;
+  text-transform: uppercase;
+  @include breakpoint(tablet) {
+    font-size: 12px;
+  }
+  
 }

@@ -1,0 +1,95 @@
+{% extends "layout.njk" %}
+{% set title = "About" %}
+{% import 'macros/_nav.njk' as nav %}
+
+{% block content %}
+{{nav.active('about')}}
+
+
+<section class="site-content">
+<h2 class="section-header">About</h2>
+<article class="site-block">
+<div class="block-content">
+ <div class="main-info">
+   
+ </div>
+  <section class="bio clearfix">
+  <img src="/img/alexander_emashev.jpg" alt="Alexander Emashev" class="pull-right" style="height:250px">
+  <h3 class="">Alexander Emashev</h3>
+  <span>Russian Federation, Sarov (Nizhny Novgorod)</span>
+  <ul class="contacts">
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-github" aria-hidden="true"></i><span class="nickname">AlexEmashev</span></a>
+    </li>
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-deviantart" aria-hidden="true"></i>
+      <span class="nickname">cgrey.deviantart.com</span></a>
+      </li>
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-instagram" aria-hidden="true"></i>
+      <span class="nickname">alexemashev</span></a>
+    </li>
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-twitter" aria-hidden="true"></i>
+      <span class="nickname">@2DLife</span></a>
+    </li>
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-facebook-square" aria-hidden="true"></i>
+      <span class="nickname">alexander.emashev</span></a>
+    </li>
+    <li class="contact">
+      <a class="contact-link" href=""><i class="fa fa-vk" aria-hidden="true"></i>
+      <span class="nickname">alexander_emashev</span></a>
+    </li>
+  </ul>
+  </section>
+  <h3>Summary</h3>
+  <p>Passionate software developer and CG artist.</p>
+  <p>Eight years of experience in software development. Writing applications business-oriented applications using .Net Framework and web technologies such as Ruby On rails.</p>
+  <p>More than five years in design and illustration. Creating images for advertisement, video-games and software.</p>
+  
+  
+  <h3>Core competencies in software development</h3>
+  <ul>
+    <li>End-user oriented software development;</li>
+    <li>Programming Languages: (in order of experience) C#, Python, Ruby, C, VBA, Java</li>
+    <li>Web Technologies: HTML, CSS (Sass, Less), JavaScript, AngularJS, React JS, jQuery, Bootstrap, Ruby On Rails</li>
+    <li>Databases: SQL-like: MS Sql, Sql lite, Interbase (Firebird DB), MS Access</li>
+    <li>Systems: MS Windows, Linux (Debian family)</li>
+  </ul>
+  
+  <h3>Main accomplishments</h3>
+  <ul>
+    <li>Developed various open-source projects hosted on GitHub.</li>
+    <li>In team developed web-based system for energy supply management. Main features of the system: tracking energy consumption by consumers, calculation of payments, provide various reports.</li>
+    <li>Conducted classes for coworkers dedicated to learning: Git, HTML, CSS, Bootstrap, JavaScript, AngularJS and Ruby.</li>
+    <li>Developed document flow system with three modules. 
+      <p><strong>Document flow control module:</strong> document registration, collaborative document approval, task tracking, message exchange system, user rights management.</p>
+      <p><strong>Document Archive:</strong> document storage management for hard-copy and electronic image management, flexible document search.</p>
+      <p><strong>Contract module:</strong> track contracts with enterprise partners, task tracking, document storage, various reports.</p></li>
+    <li>Developed databases (Interbase) analysis tool for searching and fixing inconsistencies between two similar databases.</li>
+  </ul>
+  
+  
+  <h3>Core competencies in CG graphics</h3>
+  <ul>
+    <li>2D illustration and concept design in both vector and raster.</li>
+    <li>Anatomy, perspective and composition skills.</li>
+    <li>Basic 3D modeling and animation</li>
+    <li>Vast variety of software knowledge: Adobe Photoshop, Paint Tool Sai, Adobe Illustrator, Adobe Flash, Ink Scape, 3D Studio Max, Sketchup etc</li>
+  </ul>
+  
+  <h3>Main accomplishments</h3>
+  <ul>
+    <li>Art for 2D games: sprites, backgrounds and animation.</li>
+    <li>2D illustration and concepts.</li>
+    <li>Logos and business cards design for various companies.</li>
+    <li>3D models and animations for laser show company.</li>
+    <li>Icons and software interfaces design.</li>
+    <li>Postcards and invitation cards design.</li>
+  </ul>
+  
+</div>
+</article>
+</section>
+{% endblock %}

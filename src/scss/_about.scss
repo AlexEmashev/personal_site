@@ -1,0 +1,35 @@
+.bio {
+  margin-bottom: 1.6em;
+}
+.contacts {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  padding-left: 0;
+}
+li.contact {
+  list-style: none;
+  vertical-align: middle;
+  line-height: 2em;
+  a.contact-link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .fa {
+        color: $link-active;
+      }
+      .nickname {
+        color: $link-active;
+      }
+    }
+  }
+  .fa {
+    display: inline-block;
+    width: 26px;
+    font-size: 1.5em;
+    vertical-align: middle;
+  }
+  .nickname {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
