@@ -146,8 +146,12 @@ h2.section-header {
   .preview-img {
     display: block;
     margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
     text-align: center;
+    max-width: 100%;
+    height: auto;
   }
 }
 
