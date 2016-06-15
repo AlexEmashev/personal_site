@@ -1,6 +1,14 @@
 .bio {
   margin-bottom: 1.6em;
 }
+.my-photo {
+  display: block;
+  margin: 0 auto;
+  
+  @include breakpoint(tablet) {
+    float: right;
+    }
+}
 .contacts {
   margin-top: .5em;
   margin-bottom: .5em;
