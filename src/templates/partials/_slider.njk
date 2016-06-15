@@ -7,17 +7,25 @@
   });
 </script>
 
-{% set slides = [{
+{% set slides = {
+  location: '/gallery/',
+  previewPrefix: '_slider',
+  type: '.jpg',
+  collection:[{
   alt: 'Tiny vacation',
-  href: 'gallery/0_tiny_vacation.jpg'
+  name: '0_tiny_vacation'
   },{alt: 'Little Red Riding Hood',
-  href: 'gallery/llittle_red_riding_hood_slider.jpg'
+  name: '4_little_red_riding_hood'
   },{alt: 'Summer Days',
-  href: 'gallery/3_summer_days.jpg'
+  name: '3_summer_days'
+  },{alt: 'Lucy Wilde from Despicable me 2',
+  name: '10_lucy_wilde'
+  },{alt: 'Stylized oscilloscope',
+  name: 'oscilloscope'
   },{alt: 'Lang from Yie Ar Kung-Fu',
-  href: 'gallery/5_lang_yie_ar_kungfu.jpg'
+  name: '5_lang_yie_ar_kungfu'
   }
-] %}
+]} %}
 
 
  <div class="slider-container">
@@ -26,11 +34,13 @@
   </header>
   <figure id="swipeslider" class="swipeslider">
     <ul class="sw-slides">
-      {% for slide in slides %}
+      {% for slide in slides.collection %}
         <li class="sw-slide">
           <figure class="sw-content">
-          <a class="lsb-preview" data-lsb-group="slider" href="{{slide.href}}">
-            <img src="{{slide.href}}" alt="{{slide.alt}}">
+          <a class="lsb-preview" data-lsb-group="slider" 
+             href="{{slides.location + slide.name + slides.type}}">
+            <img src="{{slides.location + slide.name + slides.previewPrefix + slides.type}}" 
+              alt="{{slide.alt}}">
           </a>
           </figure>
         </li>

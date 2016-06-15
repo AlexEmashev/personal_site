@@ -12,7 +12,9 @@ var gulp = require('gulp'),
     del = require('del'),
     nunjucksDefaults = {path: 'src/templates/'},
     plumber = require('gulp-plumber'),
-    beepbeep = require('beepbeep');
+    gutil = require('gulp-util'), // ToDo: change beepbeep on gutil, and error log
+    beepbeep = require('beepbeep'),
+    ftp = require('vinyl-ftp');
 
 // Reaction in case of error
 function errorlog(err) {
@@ -75,3 +77,29 @@ gulp.task('browser-sync', function() {
   //watch('./dist/**/*')
   //.pipe(reload({stream:true}));
 });
+
+///////////////////////////////////////////////////
+// Deploy
+///////////////////////////////////////////////////
+gulp.task('deploy', function() {
+  var user = process.env.FTP_USER;
+  var password = process.env.FTP_PWD;
+  var host = 'ftp.alexemashev.com';
+  var port = 21;
+  var localFilesGlob = ['dist/**/*'];
+  var remoteFolder = '/';
+
+  var conn = ftp.create({
+        host: host,
+        port: port,
+        user: user,
+        password: password,
+        parallel: 3,
+        log: gutil.log
+    });
+
+  return gulp.src(localFilesGlob, { buffer: false })
+      .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
+      .pipe( conn.dest( remoteFolder ) );
+});
+
