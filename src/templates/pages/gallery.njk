@@ -4,160 +4,193 @@
 
 {% block content %}
 {{nav.active('gallery')}}
-  
-  
+
+
   {{images}}
   {% set images = {
    location: '/gallery/',
    previewPrefix: '_prev',
    type: '.jpg',
-   collection: [{
+   collection: [
+    {
+      title: 'Fire Wizard',
+      name: '1firewizard'
+    },
+    {
+      title: 'Little Witch',
+      name: '2littlewitch'
+    },
+    {
+    title: 'Post-apoc. Voodoo',
+    name: '3voodoo'
+    },
+    {
+    title: 'Nova',
+    name: '4nova'
+    },
+    {
+    title: 'Bible',
+    name: '5bible'
+    },
+    {
+    title: 'Vintage Blender',
+    name: '6blender'
+    },
+    {
+    title: 'Fire and Ice',
+    name: '7wizards'
+    },
+    {
+    title: 'Bad Clowns',
+    name: '8badclowns'
+    },
+    {
     title: 'Tiny Vacation',
     name: '0_tiny_vacation'
     },
-    
+
     {
-    title: 'Stylized oscilloscope',
+    title: 'Stylized Oscilloscope',
     name: 'oscilloscope'
     },
 
-    
+
     {
     title: 'Zootopia Fanart',
     name: '1_zootopia_fanart'
     },
-    
+
     {
     title: 'Summer days',
     name: '3_summer_days'
     },
-    
+
     {
     title: 'Little Red Riding Hood',
     name: '4_little_red_riding_hood'
     },
-    
+
     {
     title: 'Couple of concepts for children game',
     name: '6_children_game_concepts'
     },
-    
+
     {
     title: 'Concepts of mafia bosses',
     name: '7_mafia_bosses'
     },
-    
+
     {
     title: 'Concepts of mafia gang',
     name: '8_mafia_gang'
     },
-    
+
     {
     title: 'Simple girly character concept',
     name: '9_girly_character'
     },
-    
+
     {
     title: 'Lucy Wilde from Despicable me 2',
     name: '10_lucy_wilde'
     },
-    
+
     {
     title: 'Everything&sbquo;s fine',
     name: '11_everything_is_fine'
     },
-    
+
     {
     title: 'A cand and a baloon',
     name: '12_cat_and_baloon'
     },
-    
+
     {
     title: 'For fun picture. Slav squat',
     name: '13_slav_squat'
     },
-    
+
     {
     title: 'Victoria Seras from Hellsing',
     name: '14_victoria_seras'
     },
-    
+
     {
     title: 'Stylized portrait of a friend',
     name: '15_snow_fary'
     },
-    
+
     {
     title: 'Stylized portrait of a redhead friend',
     name: '16_redhead'
     },
-    
+
     {
     title: 'Studies of Socrates',
     name: '17_socrates'
     },
-    
+
     {
     title: 'Tiny Tina from Borderlands series',
     name: '18_tiny_tina'
     },
-    
+
     {
     title: 'Document flow system splash screen design',
     name: '19_sed_splash'
     },
-    
+
     {
     title: 'Cursors pack',
     name: '20_cobalt_blades'
     },
-    
+
     {
     title: 'An electric company logo',
     name: '21_es'
     },
-    
+
     {
     title: 'A transport company logo',
     name: '22_evro'
     },
-    
+
     {
     title: 'A taxi company logo',
     name: '23_mustang1'
     },
-    
+
     {
     title: 'Invitations to work on a taxi company',
     name: '24_mustang2'
     },
-    
+
     {
     title: 'Fashion chain-store logo',
     name: '25_syndicate_of_fashion'
     },
-    
+
     {
     title: 'Just a girl in bra',
     name: '26_girl_in_bra'
     },
-    
+
     {
     title: 'Guy Fawkes',
     name: '27_guy_fawkes'
     }
-    
-    
+
+
   ]} %}
-  
+
   <section class="site-content">
    <h2 class="section-header">Gallery</h2>
   <ul class="gallery">
     {% for image in images.collection %}
       <li class="gallery-img">
         <a href="{{images.location + image.name + images.type}}" class="lsb-preview gallery-preview" data-lsb-group="gallery">
-          <img class="gallery-preview-img" 
-            src="{{images.location + image.name +images.previewPrefix + images.type}}" 
+          <img class="gallery-preview-img"
+            src="{{images.location + image.name +images.previewPrefix + images.type}}"
             alt="{{image.title}}">
         </a>
         <div class="gallery-img-descr">
@@ -167,6 +200,6 @@
     {% endfor %}
   </ul>
   </section>
-  
-  
+
+
 {% endblock %}

@@ -14,14 +14,20 @@
   collection:[{
   alt: 'Tiny vacation',
   name: '0_tiny_vacation'
-  },{alt: 'Little Red Riding Hood',
-  name: '4_little_red_riding_hood'
   },{alt: 'Summer Days',
   name: '3_summer_days'
-  },{alt: 'Lucy Wilde from Despicable me 2',
-  name: '10_lucy_wilde'
+  },{alt: 'Fire Wizard',
+  name: '1firewizard'
+  },{alt: 'Little Witch',
+  name: '2littlewitch'
+  },{alt: 'Nova',
+  name: '4nova'
+  },{alt: 'Little Red Riding Hood',
+  name: '4_little_red_riding_hood'
   },{alt: 'Stylized oscilloscope',
   name: 'oscilloscope'
+  },{alt: 'Bible (int + 2)',
+  name: '5bible'
   },{alt: 'Lang from Yie Ar Kung-Fu',
   name: '5_lang_yie_ar_kungfu'
   }
@@ -37,9 +43,9 @@
       {% for slide in slides.collection %}
         <li class="sw-slide">
           <figure class="sw-content">
-          <a class="lsb-preview" data-lsb-group="slider" 
+          <a class="lsb-preview" data-lsb-group="slider"
              href="{{slides.location + slide.name + slides.type}}">
-            <img src="{{slides.location + slide.name + slides.previewPrefix + slides.type}}" 
+            <img src="{{slides.location + slide.name + slides.previewPrefix + slides.type}}"
               alt="{{slide.alt}}">
           </a>
           </figure>

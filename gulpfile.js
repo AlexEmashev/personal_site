@@ -80,6 +80,7 @@ gulp.task('browser-sync', function() {
 
 ///////////////////////////////////////////////////
 // Deploy
+// command line example: FTP_USER=XXX FTP_PWD=XXX gulp deploy 
 ///////////////////////////////////////////////////
 gulp.task('deploy', function() {
   var user = process.env.FTP_USER;
@@ -99,7 +100,6 @@ gulp.task('deploy', function() {
     });
 
   return gulp.src(localFilesGlob, { buffer: false })
-      .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
+      .pipe( conn.newer( remoteFolder ) ) // only upload newer files
       .pipe( conn.dest( remoteFolder ) );
 });
-
